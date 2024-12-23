@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewConnection));
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox4 = new TextBox();
@@ -86,10 +87,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(340, 28);
+            label1.Size = new Size(376, 28);
             label1.TabIndex = 6;
             label1.Text = "Fill in the data for the new connection";
             // 
@@ -149,6 +150,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(496, 335);
             Controls.Add(textBox5);
             Controls.Add(label7);
@@ -162,6 +164,7 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(514, 382);
             MinimizeBox = false;

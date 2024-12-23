@@ -1,0 +1,24 @@
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\bin\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.exe
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\bin\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.dll.config
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\bin\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.deps.json
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\bin\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.runtimeconfig.json
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\bin\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.dll
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\bin\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.pdb
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\bin\Debug\net9.0-windows10.0.26100.0\Newtonsoft.Json.dll
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\bin\Debug\net9.0-windows10.0.26100.0\Microsoft.Windows.SDK.NET.dll
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\bin\Debug\net9.0-windows10.0.26100.0\WinRT.Runtime.dll
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.csproj.AssemblyReference.cache
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL_Remote_Link.Form1.resources
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL_Remote_Link.NewConnection.resources
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL_Remote_Link.Properties.Resources.resources
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.csproj.GenerateResource.cache
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.GeneratedMSBuildEditorConfig.editorconfig
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.AssemblyInfoInputs.cache
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.AssemblyInfo.cs
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.csproj.CoreCompileInputs.cache
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Re.5B55415F.Up2Date
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.dll
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\refint\MySQL Remote Link.dll
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.pdb
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.genruntimeconfig.cache
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\ref\MySQL Remote Link.dll

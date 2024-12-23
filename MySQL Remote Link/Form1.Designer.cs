@@ -37,6 +37,7 @@
             exitToolStripMenuItem = new ToolStripMenuItem();
             actionToolStripMenuItem = new ToolStripMenuItem();
             clearToolStripMenuItem = new ToolStripMenuItem();
+            minimizeToolStripMenuItem = new ToolStripMenuItem();
             disconectBDToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             userGuideToolStripMenuItem = new ToolStripMenuItem();
@@ -72,11 +73,33 @@
             label6 = new Label();
             label11 = new Label();
             tabPage2 = new TabPage();
+            button12 = new Button();
+            button11 = new Button();
+            button10 = new Button();
+            label21 = new Label();
+            label22 = new Label();
             tabPage3 = new TabPage();
+            label17 = new Label();
+            button7 = new Button();
+            textBox6 = new TextBox();
+            label16 = new Label();
+            label15 = new Label();
+            label3 = new Label();
+            label14 = new Label();
+            tabPage4 = new TabPage();
+            button9 = new Button();
+            textBox7 = new TextBox();
+            label20 = new Label();
+            label19 = new Label();
+            label18 = new Label();
             pictureBox1 = new PictureBox();
+            label23 = new Label();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
+            tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -101,33 +124,33 @@
             // startConectionToolStripMenuItem
             // 
             startConectionToolStripMenuItem.Name = "startConectionToolStripMenuItem";
-            startConectionToolStripMenuItem.Size = new Size(224, 26);
+            startConectionToolStripMenuItem.Size = new Size(194, 26);
             startConectionToolStripMenuItem.Text = "Start Conection";
             startConectionToolStripMenuItem.Click += startConectionToolStripMenuItem_Click;
             // 
             // newConectionToolStripMenuItem
             // 
             newConectionToolStripMenuItem.Name = "newConectionToolStripMenuItem";
-            newConectionToolStripMenuItem.Size = new Size(224, 26);
+            newConectionToolStripMenuItem.Size = new Size(194, 26);
             newConectionToolStripMenuItem.Text = "New Conection";
             newConectionToolStripMenuItem.Click += newConectionToolStripMenuItem_Click;
             // 
             // configurationToolStripMenuItem
             // 
             configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
-            configurationToolStripMenuItem.Size = new Size(224, 26);
+            configurationToolStripMenuItem.Size = new Size(194, 26);
             configurationToolStripMenuItem.Text = "Configuration";
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(224, 26);
+            exitToolStripMenuItem.Size = new Size(194, 26);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // actionToolStripMenuItem
             // 
-            actionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clearToolStripMenuItem, disconectBDToolStripMenuItem });
+            actionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clearToolStripMenuItem, minimizeToolStripMenuItem, disconectBDToolStripMenuItem });
             actionToolStripMenuItem.Name = "actionToolStripMenuItem";
             actionToolStripMenuItem.Size = new Size(66, 24);
             actionToolStripMenuItem.Text = "Action";
@@ -138,6 +161,13 @@
             clearToolStripMenuItem.Size = new Size(224, 26);
             clearToolStripMenuItem.Text = "Clear";
             clearToolStripMenuItem.Click += clearToolStripMenuItem_Click;
+            // 
+            // minimizeToolStripMenuItem
+            // 
+            minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
+            minimizeToolStripMenuItem.Size = new Size(224, 26);
+            minimizeToolStripMenuItem.Text = "Minimize";
+            minimizeToolStripMenuItem.Click += minimizeToolStripMenuItem_Click;
             // 
             // disconectBDToolStripMenuItem
             // 
@@ -193,16 +223,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10F);
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label1.Location = new Point(12, 40);
             label1.Name = "label1";
-            label1.Size = new Size(261, 23);
+            label1.Size = new Size(276, 23);
             label1.TabIndex = 2;
             label1.Text = "MySQL functions available to run";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label2.Location = new Point(12, 54);
             label2.Name = "label2";
             label2.Size = new Size(699, 20);
@@ -287,6 +318,7 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
             tabControl1.Location = new Point(12, 83);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -398,20 +430,20 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10F);
+            label10.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label10.Location = new Point(6, 8);
             label10.Name = "label10";
-            label10.Size = new Size(83, 23);
+            label10.Size = new Size(87, 23);
             label10.TabIndex = 22;
             label10.Text = "Check DB";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10F);
+            label9.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label9.Location = new Point(6, 163);
             label9.Name = "label9";
-            label9.Size = new Size(165, 23);
+            label9.Size = new Size(174, 23);
             label9.TabIndex = 21;
             label9.Text = "Create DB and Table";
             // 
@@ -444,6 +476,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label6.Location = new Point(6, 174);
             label6.Name = "label6";
             label6.Size = new Size(675, 20);
@@ -453,6 +486,7 @@
             // label11
             // 
             label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label11.Location = new Point(6, 17);
             label11.Name = "label11";
             label11.Size = new Size(675, 20);
@@ -462,6 +496,12 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.LightSteelBlue;
+            tabPage2.Controls.Add(label23);
+            tabPage2.Controls.Add(button12);
+            tabPage2.Controls.Add(button11);
+            tabPage2.Controls.Add(button10);
+            tabPage2.Controls.Add(label21);
+            tabPage2.Controls.Add(label22);
             tabPage2.Location = new Point(4, 32);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -469,15 +509,198 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Work DB";
             // 
+            // button12
+            // 
+            button12.Location = new Point(6, 153);
+            button12.Name = "button12";
+            button12.Size = new Size(154, 29);
+            button12.TabIndex = 29;
+            button12.Text = "Delete all data Table";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
+            // 
+            // button11
+            // 
+            button11.Location = new Point(6, 118);
+            button11.Name = "button11";
+            button11.Size = new Size(154, 29);
+            button11.TabIndex = 28;
+            button11.Text = "Delete Table";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(6, 83);
+            button10.Name = "button10";
+            button10.Size = new Size(154, 29);
+            button10.TabIndex = 27;
+            button10.Text = "Delete DB";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label21.Location = new Point(6, 8);
+            label21.Name = "label21";
+            label21.Size = new Size(83, 23);
+            label21.TabIndex = 25;
+            label21.Text = "Work DB";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label22.Location = new Point(6, 17);
+            label22.Name = "label22";
+            label22.Size = new Size(675, 20);
+            label22.TabIndex = 26;
+            label22.Text = "_______________________________________________________________________________________________________________";
+            // 
             // tabPage3
             // 
             tabPage3.BackColor = Color.LightSteelBlue;
+            tabPage3.Controls.Add(label17);
+            tabPage3.Controls.Add(button7);
+            tabPage3.Controls.Add(textBox6);
+            tabPage3.Controls.Add(label16);
+            tabPage3.Controls.Add(label15);
+            tabPage3.Controls.Add(label3);
+            tabPage3.Controls.Add(label14);
             tabPage3.Location = new Point(4, 32);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(689, 284);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Testing Request";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(6, 76);
+            label17.Name = "label17";
+            label17.Size = new Size(450, 20);
+            label17.TabIndex = 29;
+            label17.Text = "You must have an established connection and a Database selected.";
+            // 
+            // button7
+            // 
+            button7.Location = new Point(527, 249);
+            button7.Name = "button7";
+            button7.Size = new Size(154, 29);
+            button7.TabIndex = 28;
+            button7.Text = "Send Request";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(106, 150);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(125, 27);
+            textBox6.TabIndex = 27;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(14, 153);
+            label16.Name = "label16";
+            label16.Size = new Size(86, 20);
+            label16.TabIndex = 26;
+            label16.Text = "Nº Request:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(6, 47);
+            label15.Name = "label15";
+            label15.Size = new Size(573, 20);
+            label15.TabIndex = 25;
+            label15.Text = "You can send a number of multiple requests to the DB to evaluate DB response times.";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label3.Location = new Point(6, 8);
+            label3.Name = "label3";
+            label3.Size = new Size(74, 23);
+            label3.TabIndex = 0;
+            label3.Text = "Request";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label14.Location = new Point(6, 17);
+            label14.Name = "label14";
+            label14.Size = new Size(675, 20);
+            label14.TabIndex = 24;
+            label14.Text = "_______________________________________________________________________________________________________________";
+            // 
+            // tabPage4
+            // 
+            tabPage4.BackColor = Color.LightSteelBlue;
+            tabPage4.Controls.Add(button9);
+            tabPage4.Controls.Add(textBox7);
+            tabPage4.Controls.Add(label20);
+            tabPage4.Controls.Add(label19);
+            tabPage4.Controls.Add(label18);
+            tabPage4.Location = new Point(4, 32);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(689, 284);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Query";
+            // 
+            // button9
+            // 
+            button9.Location = new Point(529, 249);
+            button9.Name = "button9";
+            button9.Size = new Size(154, 29);
+            button9.TabIndex = 29;
+            button9.Text = "Send Query";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(6, 81);
+            textBox7.Multiline = true;
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(675, 162);
+            textBox7.TabIndex = 28;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(6, 47);
+            label20.Name = "label20";
+            label20.Size = new Size(401, 20);
+            label20.TabIndex = 27;
+            label20.Text = "Define your SQL query to get the results from the database.";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label19.Location = new Point(6, 8);
+            label19.Name = "label19";
+            label19.Size = new Size(59, 23);
+            label19.TabIndex = 26;
+            label19.Text = "Query";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label18.Location = new Point(6, 17);
+            label18.Name = "label18";
+            label18.Size = new Size(675, 20);
+            label18.TabIndex = 25;
+            label18.Text = "_______________________________________________________________________________________________________________";
             // 
             // pictureBox1
             // 
@@ -488,6 +711,15 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(14, 50);
+            label23.Name = "label23";
+            label23.Size = new Size(493, 20);
+            label23.TabIndex = 30;
+            label23.Text = "Some general functions for manipulating databases, tables, and contents.";
             // 
             // Form1
             // 
@@ -501,6 +733,7 @@
             Controls.Add(consoleTextBox);
             Controls.Add(menuStrip1);
             Controls.Add(label2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             MaximumSize = new Size(739, 500);
@@ -513,6 +746,12 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -565,5 +804,25 @@
         private Label label13;
         private TextBox textBox5;
         private PictureBox pictureBox1;
+        private TabPage tabPage4;
+        private Label label3;
+        private Label label14;
+        private Button button7;
+        private TextBox textBox6;
+        private Label label16;
+        private Label label15;
+        private Label label17;
+        private TextBox textBox7;
+        private Label label20;
+        private Label label19;
+        private Label label18;
+        private Button button9;
+        private Button button10;
+        private Label label21;
+        private Label label22;
+        private Button button11;
+        private Button button12;
+        private ToolStripMenuItem minimizeToolStripMenuItem;
+        private Label label23;
     }
 }

@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "agKu9KiEwco=",
+  "success": true,
+  "projectFilePath": "C:\\PROYECTOS\\Visual Studio\\MySQL Remote Link\\MySQL Remote Link\\MySQL Remote Link.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\darkm\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\darkm\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.26100.54\\microsoft.windows.sdk.net.ref.10.0.26100.54.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error al obtener los datos de vulnerabilidad del paquete: No se puede cargar el índice de servicio del origen https://api.nuget.org/v3/index.json."
+    }
+  ]
+}

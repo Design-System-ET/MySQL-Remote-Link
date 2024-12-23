@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Drawing.Text;
 using Newtonsoft.Json;
 
 namespace MySQL_Remote_Link
@@ -7,12 +8,16 @@ namespace MySQL_Remote_Link
     {
         private Process cmdProcess;
         private StreamWriter cmdStreamWriter;
+        private Connection selectedConnection; // Variable global para almacenar la conexión seleccionada
         string cmdClear = "SYSTEM cls;";
 
         public Form1()
         {
             InitializeComponent();
             ComboBox();
+
+            //elimino los botones del form
+            this.ControlBox = false;
         }
 
         private void ComboBox()
@@ -76,7 +81,11 @@ namespace MySQL_Remote_Link
                 foreach (var connection in connections)
                 {
                     ToolStripMenuItem connectionItem = new ToolStripMenuItem(connection.Name);
-                    connectionItem.Click += (s, args) => StartConnection(connection);
+                    connectionItem.Click += (s, args) =>
+                    {
+                        selectedConnection = connection; // Asignar la conexión seleccionada a la variable global
+                        StartConnection(connection);
+                    };
                     startConectionToolStripMenuItem.DropDownItems.Add(connectionItem);
                 }
 
@@ -101,6 +110,10 @@ namespace MySQL_Remote_Link
                 string password = connection.Password;
 
                 string cmdCommand = $"mysql -u {user} -p{password} -h {host}";
+                string cmdClear = "SYSTEM cls;";
+                string cmdMode = "mode con: cols=20 lines=50";
+                string cmdColor = "color 0A";
+
 
                 // Mostrar el comando ejecutado en consoleTextBox
                 WriteToConsole(consoleTextBox, $"Estableciendo conexion con: mysql -u ****** -p****** -h {host}", Color.Blue);
@@ -124,6 +137,9 @@ namespace MySQL_Remote_Link
                 cmdProcess.Start();
                 cmdStreamWriter = cmdProcess.StandardInput;
 
+                // Configurar el tamaño de la ventana y el color de la letra
+                cmdStreamWriter.WriteLine(cmdMode);
+                cmdStreamWriter.WriteLine(cmdColor);
 
                 // Ejecutar el comando inicial y limpiar pantalla
                 cmdStreamWriter.WriteLine(cmdCommand);
@@ -170,6 +186,8 @@ namespace MySQL_Remote_Link
             textBox3.Text = "";
             textBox4.Text = "";
             textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
 
             if (cmdProcess != null && !cmdProcess.HasExited)
             {
@@ -271,10 +289,20 @@ namespace MySQL_Remote_Link
 
         private void disconectBDToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+
+
             if (cmdProcess != null && !cmdProcess.HasExited)
             {
                 cmdStreamWriter.WriteLine("exit");
                 cmdStreamWriter.WriteLine("exit");
+
                 WriteToConsole(consoleTextBox, "Comando enviado: se desconecto de la BD;", Color.Blue);
             }
             else
@@ -352,6 +380,228 @@ namespace MySQL_Remote_Link
             {
                 WriteToConsole(consoleTextBox, "El proceso cmd no está en ejecución.", Color.Red);
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (selectedConnection == null)
+            {
+                WriteToConsole(consoleTextBox, "Debe seleccionar una conexión.", Color.Orange);
+                return;
+            }
+
+            string num_request = textBox6.Text;
+            string bd_name = textBox1.Text;
+
+            string user = selectedConnection.User;
+            string host = selectedConnection.Host;
+            string password = selectedConnection.Password;
+
+            if (!string.IsNullOrEmpty(num_request) && !string.IsNullOrEmpty(bd_name))
+            {
+                // Ruta relativa del archivo .py
+                string scriptPath = @"Resources\multiple_parameter_requests.py";
+
+                // Comando a ejecutar en la nueva ventana de cmd
+                string cmdCommand = $"python {scriptPath} --user {user} --password {password} --host {host} --database {bd_name} --num_requests {num_request}";
+
+                // Configurar el tamaño de la ventana y el color de la letra
+                string cmdMode = "mode con: cols=120 lines=40"; // Definir el tamaño de la ventana
+                string cmdColor = "color 0B"; // Definir el color de la letra (0A: fondo negro, letra verde)
+
+                // Ejecutar el comando en una nueva ventana de cmd
+                ProcessStartInfo processInfo = new ProcessStartInfo
+                {
+                    FileName = "cmd.exe",
+                    Arguments = $"/K \"{cmdMode} & {cmdColor} & {cmdCommand}\"",  // Mantener la ventana abierta después de ejecutar el comando
+                    UseShellExecute = true,  // Usar la interfaz del shell
+                    CreateNoWindow = false  // Crear una ventana visible
+                };
+
+                Process cmdProcess = new Process
+                {
+                    StartInfo = processInfo
+                };
+
+                cmdProcess.Start();
+            }
+            else
+            {
+                WriteToConsole(consoleTextBox, "Debe ingresar un valor en el campo de texto y el nombre de la base de datos.", Color.Orange);
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string query = textBox7.Text;
+
+            if (cmdProcess != null && !cmdProcess.HasExited)
+            {
+
+                if (!string.IsNullOrEmpty(query))
+                {
+                    cmdStreamWriter.WriteLine(cmdClear);
+
+                    cmdStreamWriter.WriteLine($"{query};");
+                    WriteToConsole(consoleTextBox, "Comando enviado: Se envio una query;", Color.Blue);
+                }
+                else
+                {
+                    WriteToConsole(consoleTextBox, "Debe seleccionar una BD", Color.Orange);
+                }
+            }
+            else
+            {
+                WriteToConsole(consoleTextBox, "El proceso cmd no está en ejecución.", Color.Red);
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // Mostrar el cuadro de diálogo
+            DialogResult resultado = MessageBox.Show(
+                "¿Quieres continuar con la acción?", // Mensaje
+                "Confirmación",                     // Título
+                MessageBoxButtons.YesNo,            // Botones (Aceptar y Cancelar)
+                MessageBoxIcon.Question);           // Icono
+
+            // Comprobar la respuesta
+            if (resultado == DialogResult.Yes)
+            {
+                // Si seleccionó "Aceptar", ejecutar la función
+                DropDataBase();
+            }
+            else
+            {
+                // Si seleccionó "Cancelar", no hace nada
+                MessageBox.Show("Acción cancelada.");
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            // Mostrar el cuadro de diálogo
+            DialogResult resultado = MessageBox.Show(
+                "¿Quieres continuar con la acción?", // Mensaje
+                "Confirmación",                     // Título
+                MessageBoxButtons.YesNo,            // Botones (Aceptar y Cancelar)
+                MessageBoxIcon.Question);           // Icono
+
+            // Comprobar la respuesta
+            if (resultado == DialogResult.Yes)
+            {
+                // Si seleccionó "Aceptar", ejecutar la función
+                DropTable();
+            }
+            else
+            {
+                // Si seleccionó "Cancelar", no hace nada
+                MessageBox.Show("Acción cancelada.");
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // Mostrar el cuadro de diálogo
+            DialogResult resultado = MessageBox.Show(
+                "¿Quieres continuar con la acción?", // Mensaje
+                "Confirmación",                     // Título
+                MessageBoxButtons.YesNo,            // Botones (Aceptar y Cancelar)
+                MessageBoxIcon.Question);           // Icono
+
+            // Comprobar la respuesta
+            if (resultado == DialogResult.Yes)
+            {
+                // Si seleccionó "Aceptar", ejecutar la función
+                DeleteAllDataTable();
+            }
+            else
+            {
+                // Si seleccionó "Cancelar", no hace nada
+                MessageBox.Show("Acción cancelada.");
+            }
+        }
+
+        private void DeleteAllDataTable()
+        {
+            string tableName = textBox2.Text;
+            string dbName = textBox1.Text;
+
+            if (cmdProcess != null && !cmdProcess.HasExited)
+            {
+                if (!string.IsNullOrEmpty(tableName) && !string.IsNullOrEmpty(dbName))
+                {
+                    cmdStreamWriter.WriteLine(cmdClear);
+
+                    string command = $"TRUNCATE TABLE " + tableName + ";";
+                    cmdStreamWriter.WriteLine(command);
+                    WriteToConsole(consoleTextBox, $"Comando enviado: TRUNCATE TABLE {tableName};", Color.Blue);
+                }
+                else
+                {
+                    WriteToConsole(consoleTextBox, "Debe indicar el nombre de la bese de datos y de la tabla", Color.Orange);
+                }
+            }
+            else
+            {
+                WriteToConsole(consoleTextBox, "El proceso cmd no está en ejecución.", Color.Red);
+            }
+        }
+
+        private void DropTable()
+        {
+            string tableName = textBox2.Text;
+            string dbName = textBox1.Text;
+
+            if (cmdProcess != null && !cmdProcess.HasExited)
+            {
+                if (!string.IsNullOrEmpty(tableName) && !string.IsNullOrEmpty(dbName))
+                {
+                    cmdStreamWriter.WriteLine(cmdClear);
+
+                    string command = $"DROP TABLE " + tableName + ";";
+                    cmdStreamWriter.WriteLine(command);
+                    WriteToConsole(consoleTextBox, $"Comando enviado: DROP TABLE {tableName};", Color.Blue);
+                }
+                else
+                {
+                    WriteToConsole(consoleTextBox, "Debe indicar el nombre de la tabla", Color.Orange);
+                }
+            }
+            else
+            {
+                WriteToConsole(consoleTextBox, "El proceso cmd no está en ejecución.", Color.Red);
+            }
+        }
+
+        private void DropDataBase()
+        {
+            string dbName = textBox1.Text;
+
+            if (cmdProcess != null && !cmdProcess.HasExited)
+            {
+                if (!string.IsNullOrEmpty(dbName))
+                {
+                    cmdStreamWriter.WriteLine(cmdClear);
+
+                    string command = $"DROP DATABASE " + dbName + ";";
+                    cmdStreamWriter.WriteLine(command);
+                    WriteToConsole(consoleTextBox, $"Comando enviado: DROP DATABASE {dbName};", Color.Blue);
+                }
+                else
+                {
+                    WriteToConsole(consoleTextBox, "Debe indicar el nombre de la BD", Color.Orange);
+                }
+            }
+            else
+            {
+                WriteToConsole(consoleTextBox, "El proceso cmd no está en ejecución.", Color.Red);
+            }
+        }
+
+        private void minimizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
