@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MySQL Remote Link")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae25fc1f38c1aeb1729312fbb26326cdbe296cd5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+adc649622e0f9b03d885eeb570f4ac36b7c43a72")]
 [assembly: System.Reflection.AssemblyProductAttribute("MySQL Remote Link")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MySQL Remote Link")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

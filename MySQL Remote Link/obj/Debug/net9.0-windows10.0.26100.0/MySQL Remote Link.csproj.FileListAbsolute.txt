@@ -22,3 +22,5 @@ C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-
 C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.pdb
 C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.genruntimeconfig.cache
 C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\ref\MySQL Remote Link.dll
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL Remote Link.sourcelink.json
+C:\PROYECTOS\Visual Studio\MySQL Remote Link\MySQL Remote Link\obj\Debug\net9.0-windows10.0.26100.0\MySQL_Remote_Link.About.resources

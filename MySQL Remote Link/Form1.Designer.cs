@@ -73,6 +73,7 @@
             label6 = new Label();
             label11 = new Label();
             tabPage2 = new TabPage();
+            label23 = new Label();
             button12 = new Button();
             button11 = new Button();
             button10 = new Button();
@@ -93,7 +94,6 @@
             label19 = new Label();
             label18 = new Label();
             pictureBox1 = new PictureBox();
-            label23 = new Label();
             menuStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -158,21 +158,21 @@
             // clearToolStripMenuItem
             // 
             clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            clearToolStripMenuItem.Size = new Size(224, 26);
+            clearToolStripMenuItem.Size = new Size(181, 26);
             clearToolStripMenuItem.Text = "Clear";
             clearToolStripMenuItem.Click += clearToolStripMenuItem_Click;
             // 
             // minimizeToolStripMenuItem
             // 
             minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
-            minimizeToolStripMenuItem.Size = new Size(224, 26);
+            minimizeToolStripMenuItem.Size = new Size(181, 26);
             minimizeToolStripMenuItem.Text = "Minimize";
             minimizeToolStripMenuItem.Click += minimizeToolStripMenuItem_Click;
             // 
             // disconectBDToolStripMenuItem
             // 
             disconectBDToolStripMenuItem.Name = "disconectBDToolStripMenuItem";
-            disconectBDToolStripMenuItem.Size = new Size(224, 26);
+            disconectBDToolStripMenuItem.Size = new Size(181, 26);
             disconectBDToolStripMenuItem.Text = "Disconect BD";
             disconectBDToolStripMenuItem.Click += disconectBDToolStripMenuItem_Click;
             // 
@@ -186,26 +186,27 @@
             // userGuideToolStripMenuItem
             // 
             userGuideToolStripMenuItem.Name = "userGuideToolStripMenuItem";
-            userGuideToolStripMenuItem.Size = new Size(210, 26);
+            userGuideToolStripMenuItem.Size = new Size(224, 26);
             userGuideToolStripMenuItem.Text = "User Guide";
             // 
             // developerToolStripMenuItem
             // 
             developerToolStripMenuItem.Name = "developerToolStripMenuItem";
-            developerToolStripMenuItem.Size = new Size(210, 26);
+            developerToolStripMenuItem.Size = new Size(224, 26);
             developerToolStripMenuItem.Text = "Developer";
             // 
             // technicalSupportToolStripMenuItem
             // 
             technicalSupportToolStripMenuItem.Name = "technicalSupportToolStripMenuItem";
-            technicalSupportToolStripMenuItem.Size = new Size(210, 26);
+            technicalSupportToolStripMenuItem.Size = new Size(224, 26);
             technicalSupportToolStripMenuItem.Text = "Technical Support";
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(210, 26);
+            aboutToolStripMenuItem.Size = new Size(224, 26);
             aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // consoleTextBox
             // 
@@ -509,6 +510,15 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Work DB";
             // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(14, 50);
+            label23.Name = "label23";
+            label23.Size = new Size(493, 20);
+            label23.TabIndex = 30;
+            label23.Text = "Some general functions for manipulating databases, tables, and contents.";
+            // 
             // button12
             // 
             button12.Location = new Point(6, 153);
@@ -712,15 +722,6 @@
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
             // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(14, 50);
-            label23.Name = "label23";
-            label23.Size = new Size(493, 20);
-            label23.TabIndex = 30;
-            label23.Text = "Some general functions for manipulating databases, tables, and contents.";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -740,7 +741,7 @@
             MinimumSize = new Size(739, 500);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MySQL Remote Link";
+            Text = "MySQL Remote Link - © 2004-2028 Design System - Todos los derechos reservados";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
